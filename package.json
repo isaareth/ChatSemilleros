@@ -1,0 +1,9 @@
+{
+  "name": "chatbot-semilleros-eafit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chatbot para consultar información de los semilleros activos de la Universidad EAFIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
