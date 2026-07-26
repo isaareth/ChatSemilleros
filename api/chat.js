@@ -54,7 +54,7 @@ module.exports = async (req, res) => {
       parts: [{ text: m.text }],
     }));
 
-    const model = 'gemini-2.5-flash';
+    const model = 'gemini-flash-latest'; // alias que Google mantiene apuntando al modelo Flash estable vigente
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
     const geminiResponse = await fetch(url, {
