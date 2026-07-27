@@ -31,10 +31,11 @@
   }
   .app {
     display: flex; flex-direction: column;
-    height: 100vh; max-width: 720px; margin: 0 auto;
+    min-height: 100dvh; width: min(100%, 900px); margin: 0 auto;
     background: var(--panel);
     border-left: 1px solid var(--line);
     border-right: 1px solid var(--line);
+    overflow: hidden;
   }
   header {
     position: relative;
@@ -126,6 +127,94 @@
   @keyframes blink { 0%,80%,100%{opacity:.25} 40%{opacity:1} }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+  @media (max-width: 900px) {
+    .app {
+      width: 100%;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 20px 16px 18px;
+    }
+    .mark {
+      width: 40px; height: 40px; top: 14px; right: 14px;
+    }
+    header h1, header p {
+      padding-right: 48px;
+    }
+    header h1 {
+      font-size: 24px;
+    }
+    .messages {
+      padding: 16px 16px;
+    }
+    .suggestions {
+      padding: 0 16px 12px;
+    }
+    form {
+      padding: 14px 16px 18px;
+      gap: 8px;
+    }
+    input[type=text] {
+      font-size: 14px;
+    }
+    button {
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      background: var(--panel);
+    }
+    header {
+      padding: 18px 14px 16px;
+    }
+    .mark {
+      width: 34px; height: 34px; top: 12px; right: 12px;
+    }
+    header .eyebrow {
+      font-size: 10px;
+      margin-bottom: 6px;
+    }
+    header h1 {
+      font-size: 20px;
+      padding-right: 42px;
+    }
+    header p {
+      font-size: 13px;
+      padding-right: 42px;
+    }
+    .messages {
+      padding: 14px 14px;
+      gap: 12px;
+    }
+    .msg {
+      max-width: 92%;
+      font-size: 14px;
+      padding: 12px 14px;
+    }
+    .suggestions {
+      padding: 0 14px 12px;
+      gap: 6px;
+    }
+    .chip {
+      font-size: 12px;
+      padding: 7px 11px;
+    }
+    form {
+      flex-direction: column;
+      padding: 12px 14px 14px;
+    }
+    button {
+      width: 100%;
+      padding: 12px 16px;
+    }
+  }
 </style>
 </head>
 <body>
